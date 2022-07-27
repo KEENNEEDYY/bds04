@@ -1,7 +1,7 @@
 package com.devsuperior.bds04.entities;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -20,7 +20,7 @@ public class City {
 	private String name;
 	
 	@OneToMany(mappedBy = "city")
-	private List<Event> events = new ArrayList<>();
+	private Set<Event> events = new HashSet<>();
 	
 	public City() {
 	}
@@ -46,7 +46,7 @@ public class City {
 		this.name = name;
 	}
 
-	public List<Event> getEvents() {
+	public Set<Event> getEvents() {
 		return events;
 	}
 }

@@ -1,6 +1,9 @@
 package com.devsuperior.bds04.dto;
 
 import java.io.Serializable;
+import java.util.List;
+
+import javax.validation.constraints.NotBlank;
 
 import com.devsuperior.bds04.entities.City;
 
@@ -8,7 +11,10 @@ public class CityDTO implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	private Long id;
+	@NotBlank(message = "Campo requerido")
 	private String name;
+	
+	private List<EventDTO> events;
 	
 	public CityDTO() {
 	}
@@ -37,5 +43,9 @@ public class CityDTO implements Serializable {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public List<EventDTO> getEvents() {
+		return events;
 	}
 }
